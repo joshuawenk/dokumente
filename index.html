@@ -4,28 +4,92 @@
     <meta charset="UTF-8">
     <title>Meine Dokumente</title>
     <style>
+        /* Basis-Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #fefefe;
+            color: #111;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem;
+            min-height: 100vh;
+            padding: 50px 20px;
         }
-        h1 { margin-bottom: 2rem; }
-        a {
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 30px 0 10px 0;
+        }
+
+        .folder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        a.pdf-link {
             display: block;
-            margin: 0.5rem 0;
+            width: 250px;
+            text-align: center;
             text-decoration: none;
-            color: #000;
-            font-size: 1.2rem;
+            color: #fff;
+            background: #007bff;
+            padding: 15px 20px;
+            margin: 8px 0;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+            font-weight: bold;
         }
-        a:hover { color: #007bff; }
+
+        a.pdf-link:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 50px;
+        }
+
+        @media(max-width:600px){
+            a.pdf-link {
+                width: 180px;
+                padding: 12px 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Meine Dokumente</h1>
 
-    <h2>Übungsblätter</h2>
-    <a href="Lösung A13.pdf" target="_blank">Blatt 1</a>
+    <div class="folder">
+        <h2>Übungsblätter</h2>
+        <a class="pdf-link" href="Übungsblätter/Blatt1.pdf" target="_blank">Blatt 1</a>
+        <a class="pdf-link" href="Übungsblätter/Blatt2.pdf" target="_blank">Blatt 2</a>
+    </div>
+
+    <div class="folder">
+        <h2>Vorlesungen</h2>
+        <a class="pdf-link" href="Vorlesungen/Folien1.pdf" target="_blank">Folien 1</a>
+        <a class="pdf-link" href="Vorlesungen/Folien2.pdf" target="_blank">Folien 2</a>
+    </div>
+
+    <footer>
+        &copy; 2025 Mein Dokumentenportal
+    </footer>
 </body>
 </html>
